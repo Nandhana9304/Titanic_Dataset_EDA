@@ -184,6 +184,7 @@ Titanic-Project/
 │
 ├── README.md
 ├── Titanic.ipynb
+├── best_titanic_model.pkl
 │
 ├── fare_outlier_detection.png
 ├── logistic_regression_confusion_matrix.png
