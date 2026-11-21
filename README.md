@@ -182,23 +182,23 @@ Titanic-Project/
 ├── data/
 │   └── titanic_clean.csv
 │
-├── screenshots/
-│   ├── survival_by_class.png
-│   ├── age_distribution.png
-│   ├── correlation_heatmap.png
-│   ├── missing_values_after_cleaning.png
-│   ├── fare_outlier_detection.png
-│   ├── logistic_regression_confusion_matrix.png
-│   ├── random_forest_confusion_matrix.png
-│   ├── model_performance_comparison.png
-│   └── random_forest_feature_importance.png
-│
+├── README.md
 ├── Titanic.ipynb
-├── best_titanic_model.pkl
-└── README.md
+│
+├── fare_outlier_detection.png
+├── logistic_regression_confusion_matrix.png
+├── missing_values_after_cleaning.png
+├── passenger_age_distribution.png
+├── random_forest_confusion_matrix.png
+├── random_forest_feature_importance_barplot.png
+├── survival_analysis_after_cleaning.png
+├── survival_rate_by_class.png
+├── survival_rate_by_passenger_class.png
+├── titanic_categorical_encoding.png
+├── titanic_correlation_heatmap.png
+├── titanic_dataset_first_five_rows.png
+└── titanic_feature_engineering.png
 ```
-
-*Note: The screenshot filenames above are suggested. Update them to match the actual filenames in your repository.*
 
 ## How to Run the Project
 
