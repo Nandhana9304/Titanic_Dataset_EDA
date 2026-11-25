@@ -275,16 +275,10 @@ The trained Random Forest model was successfully loaded into the dashboard and t
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
-Titanic_Streamlit_Dashboard/
-│
-├── app.py
-├── README.md
-├── Titanic.ipynb
-├── best_titanic_model.pkl
-├── requirements.txt
+Titanic-Project/
 │
 ├── data/
 │   └── titanic_clean.csv
@@ -295,14 +289,29 @@ Titanic_Streamlit_Dashboard/
 │   ├── prediction_form.png
 │   ├── prediction_test_1.png
 │   ├── prediction_test_2.png
-│   └── prediction_test_3.png
+│   ├── prediction_test_3.png
+│   ├── fare_outlier_detection.png
+│   ├── logistic_regression_confusion_matrix.png
+│   ├── missing_values_after_cleaning.png
+│   ├── passenger_age_distribution.png
+│   ├── random_forest_confusion_matrix.png
+│   ├── random_forest_feature_importance_barplot.png
+│   ├── survival_analysis_after_cleaning.png
+│   ├── survival_rate_by_class.png
+│   ├── survival_rate_by_passenger_class.png
+│   ├── titanic_categorical_encoding.png
+│   ├── titanic_correlation_heatmap.png
+│   ├── titanic_dataset_first_five_rows.png
+│   └── titanic_feature_engineering.png
 │
-└── EDA and ML visualization images
+├── README.md
+├── Titanic.ipynb
+├── app.py
+├── best_titanic_model.pkl
+└── requirements.txt
 ```
 
-**Note:** The `venv` folder is not included because it contains local environment files and is not required in the GitHub repository.
-
----
+**Note:** The `screenshots` folder contains the dashboard screenshots and EDA/ML visualization images. The `venv` folder is excluded from GitHub.
 
 # How to Run the Project
 
