@@ -1,10 +1,14 @@
-# Titanic Dataset – Exploratory Data Analysis, Data Cleaning and Machine Learning
+# Titanic Dataset – Exploratory Data Analysis, Data Cleaning, Machine Learning and Interactive Dashboard
 
 ## Project Overview
 
-This project focuses on exploring, cleaning, preparing, and building machine learning models using the Titanic dataset with Python and its data science libraries. The objective is to understand the dataset, identify and handle missing values, analyze passenger survival patterns, engineer new features, create meaningful visualizations, and develop machine learning models to predict passenger survival.
+This project focuses on exploring, cleaning, preparing, visualizing, and building machine learning models using the Titanic dataset with Python and its data science libraries.
 
-This project is completed as part of the **SkillMe Data Science Virtual Internship – Weeks 1, 2, and 3** under the project **InsightHub: Interactive Data Intelligence & ML Dashboard**.
+The objective is to understand the dataset, identify and handle missing values, analyze passenger survival patterns, engineer new features, create meaningful visualizations, and develop machine learning models to predict passenger survival.
+
+An interactive Streamlit dashboard was also developed to display data insights, visualize passenger information, and generate passenger survival predictions using the trained Random Forest model.
+
+This project is completed as part of the **SkillMe Data Science Virtual Internship – Weeks 1, 2, 3, and 4** under the project **InsightHub: Interactive Data Intelligence & ML Dashboard**.
 
 ## Objectives
 
@@ -20,6 +24,10 @@ This project is completed as part of the **SkillMe Data Science Virtual Internsh
 - Compare model performance using evaluation metrics.
 - Analyze feature importance.
 - Save and reload the best-performing model.
+- Develop an interactive dashboard using Streamlit.
+- Display dataset statistics and visualizations.
+- Generate passenger survival predictions using the trained model.
+- Test the prediction system using different passenger profiles.
 
 ## Technologies and Libraries Used
 
@@ -30,7 +38,9 @@ This project is completed as part of the **SkillMe Data Science Virtual Internsh
 - Seaborn
 - Scikit-learn
 - Joblib
+- Streamlit
 - Google Colab
+- Visual Studio Code
 
 ## Dataset Information
 
@@ -38,12 +48,15 @@ The Titanic dataset contains information about passengers aboard the Titanic, in
 
 - Total records: 891
 - Data source: Seaborn Titanic dataset
+- Target variable: `survived`
 
 ---
 
-## Week 1: Exploratory Data Analysis (EDA)
+# Week 1: Exploratory Data Analysis (EDA)
 
-The following operations were performed:
+The first week focused on understanding the Titanic dataset and identifying important patterns and relationships.
+
+### Activities Performed
 
 1. Loaded the Titanic dataset using Seaborn.
 2. Inspected the dataset using `head()`, `info()`, and `describe()`.
@@ -59,6 +72,7 @@ The following operations were performed:
 - Total passengers analyzed: 891.
 - First-class passengers had a survival rate of 62.96%.
 - Female passengers had a survival rate of 74.20%.
+- Male passengers had a survival rate of 18.89%.
 - Missing values were identified in the dataset for further cleaning.
 
 ### Week 1 Visualizations
@@ -69,7 +83,7 @@ The following operations were performed:
 
 ---
 
-## Week 2: Data Cleaning and Feature Engineering
+# Week 2: Data Cleaning and Feature Engineering
 
 The second week focused on cleaning the dataset and preparing it for further analysis and machine learning.
 
@@ -114,7 +128,7 @@ It contains the cleaned values, engineered features, and encoded categorical col
 
 ---
 
-## Week 3: Train a Prediction Model with Scikit-learn
+# Week 3: Train a Prediction Model with Scikit-learn
 
 The third week focused on developing machine learning models using the cleaned Titanic dataset to predict passenger survival.
 
@@ -125,6 +139,8 @@ The third week focused on developing machine learning models using the cleaned T
 - Selected `survived` as the target variable.
 - Split the dataset into training and testing sets using `train_test_split()`.
 - Used an 80:20 training and testing ratio with `random_state=42`.
+- Training records: 712.
+- Testing records: 179.
 
 ### Model Training
 
@@ -174,36 +190,173 @@ Therefore, Random Forest was selected as the best-performing model and saved for
 
 ---
 
-## Project Structure
+# Week 4: Build an Interactive Streamlit Dashboard
+
+The fourth week focused on developing an interactive web-based dashboard using Streamlit and integrating the trained Random Forest model for passenger survival prediction.
+
+### Dashboard Development
+
+Developed an interactive dashboard using Python and Streamlit to present Titanic dataset insights and machine learning predictions.
+
+### Dashboard Features
+
+**1. Model Information**
+
+- Displays the selected machine learning model.
+- Shows the Random Forest model's test accuracy of 82.68%.
+- Provides information about the selected model.
+
+**2. Titanic Data Analysis**
+
+Displays important dataset statistics:
+
+- Total Passengers: 891.
+- Survived Passengers: 342.
+- Overall Survival Rate: 38.38%.
+
+**3. Data Visualizations**
+
+Created dashboard visualizations, including:
+
+- Survival Rate by Passenger Class.
+- Passenger Age Distribution.
+
+**4. Dataset Preview**
+
+- Displays the cleaned Titanic dataset.
+- Allows users to explore passenger records and their features.
+
+**5. Passenger Survival Prediction**
+
+Integrated the saved Random Forest model into the Streamlit application to predict passenger survival.
+
+Users can enter passenger details through input widgets, including:
+
+- Passenger Class.
+- Gender.
+- Passenger Age.
+- Number of Siblings/Spouses.
+- Number of Parents/Children.
+- Port of Embarkation.
+- Ticket Fare.
+
+The dashboard processes the input, performs the required feature engineering, and generates a prediction using the trained model.
+
+**6. Prediction Results**
+
+The dashboard displays:
+
+- Predicted survival outcome.
+- Predicted survival probability.
+- Probability of survival.
+- Probability of not surviving.
+
+The prediction is an estimate generated by the trained machine learning model, not a guarantee of an actual outcome.
+
+### Prediction Testing
+
+Tested the prediction functionality using three different passenger profiles.
+
+| Test Case | Passenger Details | Prediction | Survival Probability |
+|---|---|---|---:|
+| 1 | Female, 1st Class, Age 29 | Survive | 88% |
+| 2 | Male, 3rd Class, Age 22 | Not Survive | 3% |
+| 3 | Female, 2nd Class, Age 35 | Survive | 79% |
+
+All three test cases successfully generated prediction results.
+
+### Week 4 Conclusion
+
+The Streamlit dashboard successfully integrates data analysis, visualizations, and machine learning predictions into a single interactive application.
+
+Users can explore Titanic dataset statistics, view visualizations, preview passenger records, and predict survival outcomes by entering passenger information.
+
+The trained Random Forest model was successfully loaded into the dashboard and tested with three different passenger profiles.
+
+---
+
+# Project Structure
 
 ```text
-Titanic-Project/
+Titanic_Streamlit_Dashboard/
+│
+├── app.py
+├── README.md
+├── Titanic.ipynb
+├── best_titanic_model.pkl
+├── requirements.txt
 │
 ├── data/
 │   └── titanic_clean.csv
 │
-├── README.md
-├── Titanic.ipynb
-├── best_titanic_model.pkl
+├── screenshots/
+│   ├── dashboard_overview.png
+│   ├── dataset_preview.png
+│   ├── prediction_form.png
+│   ├── prediction_test_1.png
+│   ├── prediction_test_2.png
+│   └── prediction_test_3.png
 │
-├── fare_outlier_detection.png
-├── logistic_regression_confusion_matrix.png
-├── missing_values_after_cleaning.png
-├── passenger_age_distribution.png
-├── random_forest_confusion_matrix.png
-├── random_forest_feature_importance_barplot.png
-├── survival_analysis_after_cleaning.png
-├── survival_rate_by_class.png
-├── survival_rate_by_passenger_class.png
-├── titanic_categorical_encoding.png
-├── titanic_correlation_heatmap.png
-├── titanic_dataset_first_five_rows.png
-└── titanic_feature_engineering.png
+└── EDA and ML visualization images
 ```
 
-## How to Run the Project
+**Note:** The `venv` folder is not included because it contains local environment files and is not required in the GitHub repository.
 
-1. Download the `Titanic.ipynb` notebook from this repository.
+---
+
+# How to Run the Project
+
+### 1. Clone the Repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+### 2. Navigate to the Project Folder
+
+```bash
+cd Titanic_Streamlit_Dashboard
+```
+
+### 3. Create a Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### 4. Activate the Virtual Environment
+
+For Windows PowerShell:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+### 5. Install Required Libraries
+
+```bash
+pip install -r requirements.txt
+```
+
+### 6. Run the Streamlit Application
+
+```bash
+streamlit run app.py
+```
+
+### 7. Open the Dashboard
+
+Open the following URL in your browser:
+
+```text
+http://localhost:8501
+```
+
+The interactive Titanic Survival Prediction Dashboard will be displayed.
+
+### Running the Jupyter Notebook
+
+1. Download the `Titanic.ipynb` notebook from the repository.
 2. Open [Google Colab](https://colab.research.google.com/).
 3. Select File → Upload notebook.
 4. Upload the downloaded notebook.
@@ -211,7 +364,9 @@ Titanic-Project/
 6. Select Runtime → Run all.
 7. Explore the outputs, analysis, visualizations, model evaluations, and predictions.
 
-To use the saved model separately, load it using Joblib:
+### Loading the Saved Model Separately
+
+The trained Random Forest model can also be loaded using Joblib:
 
 ```python
 import joblib
@@ -219,12 +374,24 @@ import joblib
 model = joblib.load('best_titanic_model.pkl')
 ```
 
-## Overall Conclusion
+---
 
-This project provided practical experience in the complete data science workflow, from exploratory data analysis and data cleaning to feature engineering and machine learning model development.
+# Overall Conclusion
 
-Through Weeks 1, 2, and 3, I gained hands-on experience with Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, and Joblib. I also learned how to train and evaluate classification models, compare their performance, interpret feature importance, and save trained models for future use.
+This project provided practical experience in the complete data science and machine learning workflow, from exploratory data analysis and data cleaning to feature engineering, model development, and interactive dashboard creation.
 
-The Random Forest Classifier achieved the best performance with 82.68% accuracy on the test dataset, making it the selected model for Titanic passenger survival prediction.
+Across the four weeks, I gained hands-on experience with Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Joblib, and Streamlit.
 
-This project strengthened my understanding of data analysis, data preprocessing, machine learning, and model evaluation using Python.
+I learned how to explore datasets, handle missing values, engineer meaningful features, visualize data patterns, train and evaluate classification models, compare model performance, analyze feature importance, and save trained models for future use.
+
+The Random Forest Classifier achieved the best performance with **82.68% accuracy**, making it the selected model for Titanic passenger survival prediction.
+
+Finally, the trained model was integrated into an interactive Streamlit dashboard, where users can explore passenger statistics, view visualizations, and generate survival predictions using different passenger details.
+
+This project strengthened my understanding of data analysis, data preprocessing, machine learning, model evaluation, and interactive data visualization using Python.
+
+---
+
+## Project Status
+
+**Completed – SkillMe Data Science Virtual Internship (Weeks 1–4)**
